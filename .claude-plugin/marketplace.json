@@ -10,7 +10,7 @@
   "metadata": {
     "version": "2.2.0",
     "last_updated": "2026-05-19",
-    "total_skills": 33,
+    "total_skills": 34,
     "categories": [
       "abap",
       "ai",
@@ -745,6 +745,26 @@
         "./commands/sqlscript-optimize.md",
         "./commands/sqlscript-setup.md"
       ]
+    },
+    {
+      "name": "sap-tm",
+      "source": "./plugins/sap-tm",
+      "description": "SAP Transportation Management (TM) development skill. Use when working with freight orders, transportation orders, freight bookings, carrier selection, charge calculation, transportation planning, dangerous goods, track and trace, settlement, output/forms, BADIs and enhancement spots (/SCMTMS/*), TM ABAP APIs, or TM IDoc integration (SHPMNT, TPSSHT). Covers SAP TM 9.x and embedded TM in S/4HANA.",
+      "version": "2.2.0",
+      "category": "tooling",
+      "keywords": [
+        "abap",
+        "api",
+        "automation",
+        "cli",
+        "development",
+        "hana",
+        "productivity",
+        "sap",
+        "sap-tm",
+        "tools"
+      ],
+      "license": "GPL-3.0"
     },
     {
       "name": "sapui5",
