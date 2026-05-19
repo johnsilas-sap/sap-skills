@@ -1,187 +1,103 @@
-<coding_guidelines>
-# SAP Skills - Project Context
+# CLAUDE.md
 
-**Repository**: https://github.com/secondsky/sap-skills
-**Purpose**: Production-ready skills for SAP development and AI coding assistants
-**Version**: 2.1.8 | **Plugins**: 32 | **Last Updated**: 2026-04-02
-
----
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## What This Repository Is
 
-32 production-tested Claude Code skills for SAP technologies: BTP, CAP, Fiori,
-ABAP, Analytics, and more. Enables context-aware AI assistance for SAP development.
+32 production-tested Claude Code skills (plugins) for SAP technologies: BTP, CAP, Fiori, ABAP, HANA, and Analytics. Packages skills as a marketplace that Claude Code users install via the `plugin-dev` system.
 
----
+**Version**: 2.1.8 | **Plugins**: 32 | **Last Updated**: 2026-04-02
 
-## Quick Navigation
-
-**👋 Plugin Development Basics?** → Use official **plugin-dev skills** FIRST
-  - skill-development, plugin-structure, command-development, agent-development,
-    hook-development, mcp-integration, plugin-settings
-
-**🔧 SAP-Specific Patterns?** → Read [**Contributor Guide**](docs/contributor-guide/)
-  - Marketplace infrastructure, quality assurance, SDK versioning
-
----
-
-## Codebase Exploration
-
-**📖 For detailed project structure, see [project-structure.md](docs/architecture/project-structure.md)** (generated with codemap)
-
-Use the `codemap` CLI tool ([github.com/JordanCoin/codemap](https://github.com/JordanCoin/codemap)) to quickly understand the project structure:
+## Setup & Commands
 
 ```bash
-# Generate project tree with file stats
-codemap .
+# Run once after cloning — activates pre-commit and pre-push validation hooks
+git config core.hooksPath .githooks
 
-# Show dependency flow (imports/exports)
-codemap --deps .
+# Sync all plugin.json manifests and regenerate marketplace.json
+./scripts/sync-plugins.sh
 
-# Files changed vs main branch
-codemap --diff
+# Preview what sync would change without writing files
+./scripts/sync-plugins.sh --dry-run
 
-# Check impact of a file (who imports it)
-codemap --importers lib/accounting/ledger.ts
-
-# Limit tree depth
-codemap --depth 2 .
-
-# Filter by extension
-codemap --only ts,tsx .
+# Validate individual concerns
+./scripts/validate-frontmatter.sh        # SKILL.md YAML headers
+./scripts/validate-json-schemas.sh       # plugin.json and marketplace.json
+./scripts/validate-reserved-words.sh     # Blocked terms in name/description
 ```
 
-Install: `brew tap JordanCoin/tap && brew install codemap`
+## Architecture
 
+### Plugin Structure (all 32 follow this pattern)
+
+```
+plugins/{name}/
+├── .claude-plugin/plugin.json       # Plugin manifest (auto-generated from SKILL.md)
+└── skills/{name}/
+    ├── SKILL.md                     # Source of truth — YAML frontmatter + skill content
+    ├── README.md                    # Keywords for discovery
+    ├── references/                  # 5–30 SAP documentation reference files
+    ├── templates/                   # Code templates (optional)
+    ├── agents/                      # Specialized agents (0–4 per plugin)
+    ├── commands/                    # Slash commands (0–5 per plugin)
+    ├── hooks/hooks.json             # Event hooks (optional)
+    ├── .mcp.json                    # MCP server config (6 plugins)
+    └── .lsp.json                    # LSP config (sap-cap-capire, sap-sqlscript only)
+```
+
+### Marketplace Registry
+
+`.claude-plugin/marketplace.json` is the central registry — **auto-generated, never hand-edit it**. The `source` field for each plugin must be `"./plugins/{name}"` (not a full path) to prevent cache bloat.
+
+`sync-plugins.sh` orchestrates three phases:
+1. Read global version from `marketplace.json`
+2. Run `generate-plugin-manifests.sh` — converts each `SKILL.md` YAML frontmatter → `plugin.json`
+3. Run `generate-marketplace.sh` — aggregates all `plugin.json` files into `marketplace.json`
+
+### SKILL.md Frontmatter Schema
+
+```yaml
 ---
+name: sap-skill-name          # lowercase, kebab-case, ≤64 chars
+description: |
+  Multi-line description.     # ≤1024 chars
+license: GPL-3.0
+metadata:
+  version: "2.1.2"
+  last_verified: "2026-02-22"
+  cap_version: "@sap/cds 9.7.x"   # Track SAP SDK versions here
+---
+```
+
+### Plugin Categories
+
+| Category | Count |
+|---|---|
+| SAP BTP Platform | 14 |
+| Core Technologies | 7 |
+| Data & Analytics | 5 |
+| UI Development | 4 |
+| Tooling & Development | 2 |
 
 ## Critical Directives
 
-### 1. ALWAYS Use plugin-dev First
+### Use plugin-dev First
 
-For all general plugin development tasks:
-- Creating skills, commands, agents, hooks
-- YAML frontmatter syntax
-- Plugin directory structure
-- MCP server integration
-- Basic validation
+For all general plugin development (creating skills, commands, agents, hooks, MCP integration, YAML frontmatter syntax) — invoke the official **plugin-dev** skills before writing any code:
+`skill-development`, `plugin-structure`, `command-development`, `agent-development`, `hook-development`, `mcp-integration`
 
-### 2. ALWAYS Use Manual Review Process
+### Manual Review Only — No Automated Refactoring
 
-**FORBIDDEN - Automated Refactoring**:
-- Creating Python/shell scripts to refactor skills
-- Using sed/awk to programmatically rewrite sections
-- Batch processing without human review
-- Auto-generating content via scripts
+**Never** use Python/shell scripts, `sed`, or `awk` to batch-rewrite skills. Skills require context-aware decisions; automation introduces subtle errors that break functionality. Always use `Read`/`Edit`/`Write` tools one file at a time with human review.
 
-**REQUIRED - Manual Refactoring**:
-- Use Read, Edit, Write tools manually
-- Review each change before applying
-- Human judgment for extraction decisions
-- Quality control via manual review
+### Reserved Words Policy
 
-**Why**: Skills require context-aware decisions. Automation introduces subtle
-errors that break functionality.
+`name` and `description` fields in any manifest MUST NOT contain `"official"`, `"anthropic"`, or `"claude"` — the CLI blocks these to prevent marketplace impersonation. Use `"AI coding assistant"` or `"the Code CLI"` instead.
 
----
+## Maintenance
 
-## SAP-Specific Infrastructure
+**Quarterly**: Check SAP SDK/package versions, update `last_verified` dates in SKILL.md frontmatter, re-test in production.
 
-### Marketplace System
+**On major SAP releases**: Review breaking changes, update templates and examples, document migration paths.
 
-**Scale**: 32 plugins with coordinated versioning
-**Structure**: Dual-level manifests (plugin + skill plugin.json)
-**Registry**: Central marketplace.json (48KB, auto-generated)
-**Cross-References**: 13 plugins reference related skills
-
-**Categories**:
-- Tooling & Development (3 skills)
-- SAP BTP Platform (14 skills)
-- UI Development (4 skills)
-- Data & Analytics (5 skills)
-- Core Technologies (6 skills)
-
-### Automation Scripts
-
-**sync-plugins.sh**: Orchestrates complete sync workflow
-  1. Read global version from marketplace.json
-  2. Generate/update all plugin.json files
-  3. Regenerate marketplace.json
-
-**generate-plugin-manifests.sh**: SKILL.md YAML → plugin.json conversion
-
-**generate-marketplace.sh**: Aggregates 66 plugin.json into central registry
-
-**Usage**:
-```bash
-./scripts/sync-plugins.sh           # Full sync
-./scripts/sync-plugins.sh --dry-run # Preview changes
-```
-
-### Quality Standards
-
-**Production Testing**: All skills tested with real SAP systems/BTP
-
-**Version Tracking**: SAP SDK versions documented in metadata
-```yaml
-metadata:
-  version: "2.1.1"
-  cap_version: "@sap/cds 9.4.x"
-  last_verified: "2025-12-28"
-```
-
-**Known Issues**: Documented with SAP Note/GitHub issue citations
-
-**Reserved Words Policy**: Marketplace and plugin `name` and `description` fields
-MUST NOT contain: "official", "anthropic", or "claude". These are blocked by the
-CLI to prevent marketplace impersonation. Use alternatives like "AI coding assistant"
-or "the Code CLI" instead.
-
----
-
-## Maintenance Cycles
-
-**Quarterly** (Every 3 months):
-- Check SAP SDK/package versions
-- Update to latest stable releases
-- Re-test all skills in production
-- Update last_verified dates
-
-**When SAP Releases Major Updates**:
-- Review breaking changes in release notes
-- Update skill templates and examples
-- Test thoroughly with new versions
-- Document migration paths if needed
-
----
-
-## Getting Help
-
-**General Plugin Development**:
-→ Use plugin-dev skills (official Anthropic)
-
-**SAP-Specific Patterns**:
-→ Read [Contributor Guide](docs/contributor-guide/)
-
-**Issues**:
-→ https://github.com/secondsky/sap-skills/issues
-
----
-
-## External Resources
-
-**Official Anthropic**:
-- Plugin-dev skills: Use for all general plugin development
-- Skills Spec: https://github.com/anthropics/skills/blob/main/agent_skills_spec.md
-
-**SAP Resources**:
-- SAP Developer Center: https://developers.sap.com/
-- SAP Help Portal: https://help.sap.com/
-- SAP Community: https://community.sap.com/
-
----
-
-**Last Updated**: 2026-04-02
-**Next Review**: 2026-07-02 (Quarterly)
-**Maintainer**: E.J.
-</coding_guidelines>
+Next review: 2026-07-02
