@@ -1,0 +1,22 @@
+{
+  "name": "sap-idoc",
+  "description": "SAP IDoc (Intermediate Document) development skill. Use when creating custom IDoc types, building inbound/outbound processing function modules, configuring partner profiles (WE20), working with ALE/EDI distribution models (BD64), handling IDoc errors and reprocessing (BD87), extending standard IDocs with Z-segments, or monitoring via WE02/WE05. Covers ORDERS, INVOIC, DESADV, SHPMNT, WMMBXY, DELVRY and custom message types across EWM, TM, MM, SD, and FI.",
+  "version": "2.2.0",
+  "author": {
+    "name": "E.J.",
+    "email": "maintainers@example.com"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/secondsky/sap-skills",
+  "keywords": [
+    "automation",
+    "cli",
+    "development",
+    "idoc",
+    "productivity",
+    "sap",
+    "sap-idoc",
+    "tools"
+  ],
+  "category": "tooling"
+}
