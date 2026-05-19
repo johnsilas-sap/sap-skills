@@ -9,8 +9,8 @@
   },
   "metadata": {
     "version": "2.2.0",
-    "last_updated": "2026-04-02",
-    "total_skills": 32,
+    "last_updated": "2026-05-19",
+    "total_skills": 33,
     "categories": [
       "abap",
       "ai",
@@ -511,6 +511,27 @@
         "./commands/datasphere-view-template.md",
         "./commands/datasphere-mcp-tools.md"
       ]
+    },
+    {
+      "name": "sap-ewm",
+      "source": "./plugins/sap-ewm",
+      "description": "SAP Extended Warehouse Management (EWM) development skill. Use when working with warehouse structures, transfer orders (TO/WT), warehouse tasks, RF mobile transactions (ITSmobile), resource management, wave management, queue management, physical inventory, delivery processing, posting changes, BADIs and enhancement spots for EWM, ABAP APIs (/SCWM/*, /SCDL/*), performance monitoring (ST13 PERF_TOOL), or EWM IDoc integration. Covers decentralized and embedded EWM on SAP S/4HANA and SAP SCM.",
+      "version": "2.2.0",
+      "category": "tooling",
+      "keywords": [
+        "abap",
+        "api",
+        "automation",
+        "cli",
+        "development",
+        "ewm",
+        "hana",
+        "productivity",
+        "sap",
+        "sap-ewm",
+        "tools"
+      ],
+      "license": "GPL-3.0"
     },
     {
       "name": "sap-fiori-tools",
