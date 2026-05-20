@@ -1,0 +1,30 @@
+{
+  "name": "sap-api-management",
+  "description": "SAP API Management skill (part of SAP Integration Suite on BTP). Use when creating or configuring API proxies, applying policies (Verify API Key, OAuth 2.0, Quota, Spike Arrest, Assign Message, Extract Variables, Service Callout, Response Cache), designing API products, managing developer portal subscriptions, or exposing SAP S/4HANA, EWM, and TM OData services via a managed API gateway. Covers proxy configuration, policy XML syntax, pre/post flows, conditional flows, OAuth client credentials and authorization code flows, on-premise backend connectivity via Cloud Connector, and API analytics.",
+  "version": "2.2.0",
+  "author": {
+    "name": "E.J.",
+    "email": "maintainers@example.com"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/secondsky/sap-skills",
+  "keywords": [
+    "api",
+    "authorization",
+    "automation",
+    "btp",
+    "cli",
+    "development",
+    "hana",
+    "management",
+    "oauth",
+    "odata",
+    "productivity",
+    "rest",
+    "sap",
+    "sap-api-management",
+    "tools",
+    "xml"
+  ],
+  "category": "tooling"
+}
