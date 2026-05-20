@@ -10,7 +10,7 @@
   "metadata": {
     "version": "2.2.0",
     "last_updated": "2026-05-20",
-    "total_skills": 37,
+    "total_skills": 38,
     "categories": [
       "abap",
       "ai",
@@ -121,6 +121,24 @@
         "style",
         "tools",
         "xml"
+      ],
+      "license": "GPL-3.0"
+    },
+    {
+      "name": "sap-badi",
+      "source": "./plugins/sap-badi",
+      "description": "SAP BAdI (Business Add-In) development skill. Use when creating or implementing BAdIs in SE18/SE19, writing kernel BAdI implementations using GET BADI/CALL BADI, working with filter-dependent BAdIs, enhancement spots, classic BAdIs via CL_EXITHANDLER, or finding and implementing EWM/TM enhancement points. Covers BAdI definition structure, implementation class patterns, filter values, multiple implementations, activation, and the full EWM and TM BAdI catalogs for warehouse operations, RF mobile, delivery processing, carrier selection, and charge calculation.",
+      "version": "2.2.0",
+      "category": "tooling",
+      "keywords": [
+        "automation",
+        "badi",
+        "cli",
+        "development",
+        "productivity",
+        "sap",
+        "sap-badi",
+        "tools"
       ],
       "license": "GPL-3.0"
     },
