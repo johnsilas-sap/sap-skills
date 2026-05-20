@@ -10,7 +10,7 @@
   "metadata": {
     "version": "2.2.0",
     "last_updated": "2026-05-20",
-    "total_skills": 38,
+    "total_skills": 39,
     "categories": [
       "abap",
       "ai",
@@ -674,6 +674,31 @@
         "productivity",
         "sap",
         "sap-idoc",
+        "tools"
+      ],
+      "license": "GPL-3.0"
+    },
+    {
+      "name": "sap-mobile-dev-kit",
+      "source": "./plugins/sap-mobile-dev-kit",
+      "description": "SAP Mobile Development Kit (MDK) skill. Use when building or modifying MDK mobile apps in Business Application Studio or VS Code, defining pages (ListReport, Sectioned, FormCell, ObjectTable), controls, OData bindings, actions (navigation, OData CRUD, barcode scan, rules), JavaScript rules, offline OData store configuration, push notifications, or deploying to SAP Mobile Services on BTP. Covers logistics use cases: EWM warehouse operations, inventory checks, goods receipt, transfer order confirmation, and field service apps connecting to SAP S/4HANA or EWM OData APIs.",
+      "version": "2.2.0",
+      "category": "tooling",
+      "keywords": [
+        "api",
+        "automation",
+        "btp",
+        "cli",
+        "dev",
+        "development",
+        "hana",
+        "javascript",
+        "kit",
+        "mobile",
+        "odata",
+        "productivity",
+        "sap",
+        "sap-mobile-dev-kit",
         "tools"
       ],
       "license": "GPL-3.0"
