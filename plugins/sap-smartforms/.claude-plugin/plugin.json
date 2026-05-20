@@ -1,0 +1,23 @@
+{
+  "name": "sap-smartforms",
+  "description": "SAP SmartForms development skill. Use when building or modifying SmartForms in transaction SMARTFORMS, writing ABAP print programs using SSF_FUNCTION_MODULE_NAME, designing form layouts with pages/windows/text/tables/graphics, configuring style sheets in SMARTSTYLES, writing conditions and events, generating PDF output, or migrating SmartForms to Adobe Forms. Covers delivery notes, invoices, purchase orders, warehouse labels, and other business document output for EWM, TM, SD, MM, and FI scenarios.",
+  "version": "2.2.0",
+  "author": {
+    "name": "E.J.",
+    "email": "maintainers@example.com"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/secondsky/sap-skills",
+  "keywords": [
+    "abap",
+    "automation",
+    "cli",
+    "development",
+    "productivity",
+    "sap",
+    "sap-smartforms",
+    "smartforms",
+    "tools"
+  ],
+  "category": "tooling"
+}
