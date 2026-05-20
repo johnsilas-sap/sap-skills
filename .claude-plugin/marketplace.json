@@ -10,7 +10,7 @@
   "metadata": {
     "version": "2.2.0",
     "last_updated": "2026-05-20",
-    "total_skills": 40,
+    "total_skills": 41,
     "categories": [
       "abap",
       "ai",
@@ -700,6 +700,30 @@
         "productivity",
         "sap",
         "sap-idoc",
+        "tools"
+      ],
+      "license": "GPL-3.0"
+    },
+    {
+      "name": "sap-integration-suite",
+      "source": "./plugins/sap-integration-suite",
+      "description": "SAP Integration Suite skill, focused on Cloud Integration (CPI). Use when designing iFlows (integration flows), configuring adapters (OData, SOAP, HTTP, IDoc, JMS, SFTP, AS2, AMQP), writing Groovy/JavaScript scripts, building XSLT or message mapper transformations, configuring routing (Router, Multicast, Filter), handling errors (Exception Subprocess, dead letter), managing credentials and OAuth in the Security Material store, monitoring message processing logs, or deploying integration packages. Covers logistics patterns: IDoc-to-REST, OData-to-IDoc, EWM/TM event forwarding, carrier EDI (AS2/EDIFACT), and delivery confirmation flows.",
+      "version": "2.2.0",
+      "category": "tooling",
+      "keywords": [
+        "automation",
+        "cli",
+        "development",
+        "http",
+        "integration",
+        "javascript",
+        "oauth",
+        "odata",
+        "productivity",
+        "rest",
+        "sap",
+        "sap-integration-suite",
+        "suite",
         "tools"
       ],
       "license": "GPL-3.0"
