@@ -1,0 +1,25 @@
+{
+  "name": "sap-adobe-forms",
+  "description": "SAP Adobe Forms (ADS) development skill. Use when building or modifying Adobe forms in SFP (Form Builder), writing ABAP print programs using FP_JOB_OPEN/FP_JOB_CLOSE, designing form interfaces and context mappings, scripting forms with JavaScript (XFA), configuring ADS connections, printing via PPF, generating PDF output for delivery notes, labels, invoices, GR slips, warehouse documents, or handling interactive PDF forms with user input. Covers both print and interactive form scenarios.",
+  "version": "2.2.0",
+  "author": {
+    "name": "E.J.",
+    "email": "maintainers@example.com"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/secondsky/sap-skills",
+  "keywords": [
+    "abap",
+    "adobe",
+    "automation",
+    "cli",
+    "development",
+    "forms",
+    "javascript",
+    "productivity",
+    "sap",
+    "sap-adobe-forms",
+    "tools"
+  ],
+  "category": "tooling"
+}
