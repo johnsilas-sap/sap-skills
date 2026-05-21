@@ -10,7 +10,7 @@
   "metadata": {
     "version": "2.2.0",
     "last_updated": "2026-05-21",
-    "total_skills": 45,
+    "total_skills": 46,
     "categories": [
       "abap",
       "ai",
@@ -58,6 +58,24 @@
         "rap",
         "sap",
         "sap-abap-cds"
+      ],
+      "license": "GPL-3.0"
+    },
+    {
+      "name": "sap-abap-oop",
+      "source": "./plugins/sap-abap-oop",
+      "description": "ABAP Object-Oriented Programming for modern SAP ABAP development. Covers class definition and implementation (visibility sections, static/instance members, constructor, FINAL/ABSTRACT), interfaces and multiple implementation, inheritance (INHERITING FROM, REDEFINITION, super calls, polymorphism, CAST/IS), exception handling (CX_ hierarchy, TRY/CATCH/CLEANUP, IF_T100_MESSAGE), design patterns (Factory/Singleton/Strategy/Observer/Template Method), runtime type services (RTTI), modern ABAP expressions (VALUE/CORRESPONDING/FILTER/FOR/COND/REDUCE/string templates), and OOP patterns for EWM/TM service and repository classes. Key patterns: - Interface-based dependency injection for testability - Factory class for object creation with environment switch - Exception class with T100 message and attribute-rich context - Strategy pattern for pluggable algorithm selection - Repository pattern: data access isolated behind interface - FOR ... IN ... WHERE table comprehension expressions - RTTI for dynamic type inspection and generic processing - CAST / IS / ?= for safe OO downcasting",
+      "version": "2.2.0",
+      "category": "abap",
+      "keywords": [
+        "abap",
+        "abap cloud",
+        "cds",
+        "internal tables",
+        "oop",
+        "rap",
+        "sap",
+        "sap-abap-oop"
       ],
       "license": "GPL-3.0"
     },
