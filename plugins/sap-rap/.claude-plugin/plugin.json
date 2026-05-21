@@ -1,0 +1,29 @@
+{
+  "name": "sap-rap",
+  "description": "RESTful ABAP Programming Model (RAP) for building OData V4 services and Fiori apps on S/4HANA and BTP ABAP Environment. Covers CDS view entity composition trees, behavior definitions (managed/unmanaged/abstract), behavior implementation classes (handler/saver methods), EML (Entity Manipulation Language), draft handling, actions and functions, service definitions and bindings, and ABAP Unit testing for RAP objects. Key patterns: - Root entity with composition to child (header/item model) - Managed provider with late numbering (UUID keys) - Unmanaged provider for legacy table access - Bound actions (approve/reject/post) with result - Draft-enabled editing for Fiori Elements apps - Feature control (static/dynamic field/action visibility) - Validations and determinations on save/field change - EML READ/MODIFY/COMMIT in test classes and logic",
+  "version": "2.2.0",
+  "author": {
+    "name": "E.J.",
+    "email": "maintainers@example.com"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/secondsky/sap-skills",
+  "keywords": [
+    "abap",
+    "automation",
+    "btp",
+    "cds",
+    "cli",
+    "development",
+    "fiori",
+    "hana",
+    "odata",
+    "productivity",
+    "rap",
+    "rest",
+    "sap",
+    "sap-rap",
+    "tools"
+  ],
+  "category": "tooling"
+}
