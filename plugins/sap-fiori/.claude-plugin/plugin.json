@@ -1,0 +1,26 @@
+{
+  "name": "sap-fiori",
+  "description": "SAP Fiori development skill. Use when building Fiori Elements apps (List Report, Object Page, Worklist, Analytical List Page, Overview Page), writing CDS UI annotations (@UI.lineItem, @UI.fieldGroup, @UI.selectionField, @UI.identification, @UI.facets), developing custom SAPUI5 apps (XML views, controllers, OData models, routing), configuring Fiori Launchpad (tiles, target mappings, semantic objects), using Fiori Tools in BAS or VS Code, or building OData V4 CAP-backed Fiori apps. Covers logistics scenarios: delivery management, warehouse operations, transfer order UI, goods receipt apps, and EWM/TM Fiori extensions.",
+  "version": "2.2.0",
+  "author": {
+    "name": "E.J.",
+    "email": "maintainers@example.com"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/secondsky/sap-skills",
+  "keywords": [
+    "automation",
+    "cap",
+    "cds",
+    "cli",
+    "development",
+    "fiori",
+    "odata",
+    "productivity",
+    "sap",
+    "sap-fiori",
+    "tools",
+    "xml"
+  ],
+  "category": "tooling"
+}
