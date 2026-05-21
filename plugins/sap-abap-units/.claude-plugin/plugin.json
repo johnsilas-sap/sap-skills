@@ -1,0 +1,23 @@
+{
+  "name": "sap-abap-units",
+  "description": "ABAP Unit Testing for SAP ABAP development. Covers test class anatomy (FOR TESTING, RISK LEVEL, DURATION, setup/teardown), CL_ABAP_UNIT_ASSERT assertion methods, test doubles for CDS views and OO interfaces, mocking with CL_ABAP_TESTDOUBLE, test seams for function module injection, RAP EML testing with CDS test environments, ATC (ABAP Test Cockpit) configuration and code coverage, and logistics-specific patterns for testing EWM/TM BAdI implementations and function module calls. Key patterns: - CLASS-SETUP / setup / teardown lifecycle - CL_ABAP_UNIT_ASSERT for all assertion types - CL_ABAP_TESTDOUBLE for interface mocking - CL_CDS_TEST_ENVIRONMENT for CDS view doubles - Test seam + injection for function module mocking - Factory pattern for dependency injection - EML READ/MODIFY/COMMIT in RAP unit tests - ATC variant configuration and coverage targets",
+  "version": "2.2.0",
+  "author": {
+    "name": "E.J.",
+    "email": "maintainers@example.com"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/secondsky/sap-skills",
+  "keywords": [
+    "abap",
+    "abap cloud",
+    "cds",
+    "internal tables",
+    "oop",
+    "rap",
+    "sap",
+    "sap-abap-units",
+    "units"
+  ],
+  "category": "abap"
+}
