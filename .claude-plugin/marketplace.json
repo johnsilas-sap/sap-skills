@@ -10,7 +10,7 @@
   "metadata": {
     "version": "2.2.0",
     "last_updated": "2026-05-21",
-    "total_skills": 44,
+    "total_skills": 45,
     "categories": [
       "abap",
       "ai",
@@ -542,6 +542,28 @@
         "./commands/cap-cds-reference.md",
         "./commands/cap-deployment-checklist.md"
       ]
+    },
+    {
+      "name": "sap-cds-views",
+      "source": "./plugins/sap-cds-views",
+      "description": "Core Data Services (CDS) views for SAP ABAP development on S/4HANA and BTP. Covers classic define view vs modern view entities, associations (to one/to many/to parent/composition), joins, CDS built-in functions and expressions, key annotations (@AbapCatalog, @AccessControl, @Semantics, @ObjectModel, @Analytics, @UI, @EndUserText), CDS hierarchy for tree structures, analytical cube/dimension/query views, metadata extensions, and EWM/TM-specific CDS patterns. Key patterns: - Root/child view entity composition trees (RAP data model) - Association vs join selection guide - Path expression $projection / $self / _Association.Field - @Semantics for amounts, quantities, dates, and user fields - @ObjectModel for virtual elements and transactional processing - Analytical views: cube → dimension → query layering - CDS hierarchy (parent-child for TreeTable) - EXTEND VIEW and metadata extensions (@Metadata.layer) - DCL access control (PFCG / aspect pfcg_auth)",
+      "version": "2.2.0",
+      "category": "tooling",
+      "keywords": [
+        "abap",
+        "automation",
+        "btp",
+        "cds",
+        "cli",
+        "development",
+        "hana",
+        "productivity",
+        "sap",
+        "sap-cds-views",
+        "tools",
+        "views"
+      ],
+      "license": "GPL-3.0"
     },
     {
       "name": "sap-cloud-sdk-ai",
